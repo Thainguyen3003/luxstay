@@ -766,10 +766,10 @@
                                             <span class="ml--6">VND</span>
                                         </span>
                                     </div>
-                                    <div class="popover" style="display:none">
+                                    <div class="popover">
                                         <div class="row is-relative currency-box">
                                             <div class="col-md-6 col-xs-12">
-                                                <a href="#" class="is-flex middle-xs is-relative pointer">
+                                                <a href="#" class="is-flex middle-xs is-relative pointer is-checked">
                                                     <img src="{{ url('images/vi.svg') }}" width="16" height="16" alt="">
                                                     <span class="px--12">Tiếng Việt</span>
                                                 </a>
@@ -806,3 +806,11 @@
         </div>
     </div>
 </header>
+
+<div id="app">
+    <div id="main" class="wrapper clearfix">
+        <header-component inline-template>                            
+        </header-component>
+    </div>
+    <!-- main -->
+</div>

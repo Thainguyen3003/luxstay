@@ -13,8 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/trang-chu', 'HomeController@home')->name('home');
-
 Auth::routes();
+
+Route::get('/trang-chu', 'HomeController@home')->name('home');
+Route::get('/the-loai', 'CategoryController@category')->name('category');
+Route::get('/quoc-gia', 'CountryController@country')->name('country');
+Route::get('/phim', 'MovieController@movie')->name('movie');
+Route::get('/xem-phim', 'WatchController@watch')->name('watch');
+Route::get('/tap-phim', 'EpisodeController@episode')->name('episode');
 
 /* Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home'); */

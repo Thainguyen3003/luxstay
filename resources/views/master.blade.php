@@ -55,10 +55,18 @@
 <body>
     <div class="app">
         @include('layouts.header')
+        
+        <div class="container">
+            <div class="row fullwith-slider"></div>
+        </div>
 
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
 
+        <div class="clearfix"></div>
         @include('layouts.footer')
+        <div id='easy-top'></div>
     </div>
 </body>
 

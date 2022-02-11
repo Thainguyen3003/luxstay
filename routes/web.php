@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/trang-chu', 'HomeController@home')->name('home');
+Route::get('/', 'HomeController@home')->name('home');
 Route::get('/the-loai', 'CategoryController@category')->name('category');
 Route::get('/quoc-gia', 'CountryController@country')->name('country');
 Route::get('/phim', 'MovieController@movie')->name('movie');

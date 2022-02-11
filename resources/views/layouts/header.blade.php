@@ -1,816 +1,131 @@
-<header class="header">
-    <div class="grid">
-        <div class="header-wraper">
-            <div class="header">
-                <div class="container container--md w--100">
-                    <div class="row middle-xs">
-                        <div class="col-xs-10 col-md-6 is-flex align-center flex-nowrap">
-                            <a href="#" class="header__logo is-in-line-block nuxt-link-exact-active nuxt-link-active">
-                                <img src="{{ url('images/logo.png') }}" alt="">
-                            </a>
-                            <div class="app-header-search is-flex">
-                                <div class="search__wrapper">
-                                    <div class="search-box">
-                                        <div class="search-field__wrap is-relative">
-                                            <div class="search-location">
-                                                <div class="booking__field is-relative">
-                                                    <i class="fas fa-search mr--12"></i>
-                                                    <div class="booking__input">
-                                                        <input type="text" placeholder="Tìm kiếm" class="booking__input-text bold">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="search-date mt--12 mt--md--0">
-                                                <div class="booking__field">
-                                                    <i class="far fa-calendar mr--12"></i>
-                                                    <div class="date-search-button">
-                                                        <div class="datepicker-range">
-                                                            <button id="trigger-date-range" class="btn btn-outline--gray btn-xs search-filter__button">Ngày</button>
-                                                            <div class="asd__wrapper asd__wrapper--datepicker-open" style="position: absolute; top: 54px; left: 0px; width: 700px; z-index: 100; display:none">
-                                                                <div class="asd__datepicker-header">
-                                                                    <div class="asd__change-month-button asd__change-month-button--previous">
-                                                                        <button type="button">
-                                                                            <i class="fas fa-arrow-left"></i>
-                                                                        </button>
-                                                                    </div>
-                                                                    <div class="asd__change-month-button asd__change-month-button--next">
-                                                                        <button type="button">
-                                                                            <i class="fas fa-arrow-right"></i>
-                                                                        </button>
-                                                                    </div>
-                                                                    <div class="asd__days-legend" style="width: 350px; left: 0px;">
-                                                                        <div class="asd__day-title">Mon</div>
-                                                                        <div class="asd__day-title">Tue</div>
-                                                                        <div class="asd__day-title">Wed</div>
-                                                                        <div class="asd__day-title">Thu</div>
-                                                                        <div class="asd__day-title">Fri</div>
-                                                                        <div class="asd__day-title">Sat</div>
-                                                                        <div class="asd__day-title">Sun</div>
-                                                                    </div>
-                                                                    <div class="asd__days-legend" style="width: 350px; left: 350px;">
-                                                                        <div class="asd__day-title">Mon</div>
-                                                                        <div class="asd__day-title">Tue</div>
-                                                                        <div class="asd__day-title">Wed</div>
-                                                                        <div class="asd__day-title">Thu</div>
-                                                                        <div class="asd__day-title">Fri</div>
-                                                                        <div class="asd__day-title">Sat</div>
-                                                                        <div class="asd__day-title">Sun</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="asd__inner-wrapper" style="margin-left: -350px;">
-                                                                    <div class="asd__month asd__month--hidden" style="width: 350px;">
-                                                                        <div class="asd__month-name">
-                                                                            <span>December</span>
-                                                                            <span>2021</span>
-                                                                        </div>
-                                                                        <table class="asd__month-table">
-                                                                            <tbody>
-                                                                                <tr class="asd__week">
-                                                                                    <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                    <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>1</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>2</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>3</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>4</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>5</button>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>6</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>7</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>8</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>9</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>10</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>11</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>12</button>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>13</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>14</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>15</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>16</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>17</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>18</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>19</button>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>20</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>21</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>22</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>23</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>24</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>25</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>26</button>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>27</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>28</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>29</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>30</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>31</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                        <button type="button" class="asd__day-button" disabled>32</button>
-                                                                                    </td>
-                                                                                    <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                    
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </div>
-
-                                                                    <div class="asd__month" style="width: 350px;">
-                                                                        <div class="asd__month-name">
-                                                                            <span>January</span>
-                                                                            <span>2022</span>
-                                                                        </div>
-                                                                        <table class="asd__month-table">
-                                                                            <tbody>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>1</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>2</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>3</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>4</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>5</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>6</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>7</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>8</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>9</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>10</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>11</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>12</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>13</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>14</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>15</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>16</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>17</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>18</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>19</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>20</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>21</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>22</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>23</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>24</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>25</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>26</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>27</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>28</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>29</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>30</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>31</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </div>
-                                                                    <div class="asd__month" style="width: 350px;">
-                                                                        <div class="asd__month-name">
-                                                                            <span>February</span>
-                                                                            <span>2022</span>
-                                                                        </div>
-                                                                        <table class="asd__month-table">
-                                                                            <tbody>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>1</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>2</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>3</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>4</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>5</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>6</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>7</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>8</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>9</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>10</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>11</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>12</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>13</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>14</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>15</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>16</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>17</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>18</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>19</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>20</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>21</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>22</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>23</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>24</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>25</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>26</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>27</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>28</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </div>
-                                                                    <div class="asd__month asd__month--hidden" style="width: 350px; display:none">
-                                                                        <div class="asd__month-name">
-                                                                            <span>February</span>
-                                                                            <span>2022</span>
-                                                                        </div>
-                                                                        <table class="asd__month-table">
-                                                                            <tbody>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>1</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>2</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>3</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>4</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>5</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>6</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>7</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>8</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>9</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>10</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>11</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>12</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>13</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>14</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>15</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>16</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>17</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>18</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>19</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>20</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>21</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>22</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>23</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>24</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>25</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>26</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>27</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>28</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </div>
-                                                                    <div class="asd__month asd__month--hidden" style="width: 350px; display:none">
-                                                                        <div class="asd__month-name">
-                                                                            <span>March</span>
-                                                                            <span>2022</span>
-                                                                        </div>
-                                                                        <table class="asd__month-table">
-                                                                            <tbody>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>1</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>2</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>3</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>4</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>5</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>6</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>7</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>8</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>9</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>10</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>11</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>12</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>13</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>14</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>15</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>16</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>17</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>18</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>19</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>20</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>21</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>22</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>23</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>24</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>25</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>26</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>27</button>
-                                                                                        </td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class="asd__week">
-                                                                                    <td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>28</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>29</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>30</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--enabled asd__day--disabled" style="width: 45.7143px; color: rgb(86, 90, 92);">
-                                                                                            <button type="button" class="asd__day-button" disabled>31</button>
-                                                                                        </td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                        <td class="asd__day asd__day--empty" style="width: 45.7143px; color: rgb(86, 90, 92);"></td>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="asd__action-buttons">
-                                                                    <button type="button">Đóng</button>
-                                                                    <button type="button">Áp dụng</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="search-guest mt--12 mt--md--0 cursor">
-                                                <div class="booking__field is-relative">
-                                                    <i class="fas fa-user mr--12"></i>
-                                                    <div class="booking__input">
-                                                        <p>Số khách</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="booking__btn btn btn--secondary bold mt--12 mt--md--0">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
+<header id="header">
+    <div class="container">
+        <div class="row" id="headwrap">
+            <div class="col-md-3 col-sm-6 slogan">
+                <p class="site-title"><a class="logo" href="" title="phim hay ">Phim Hay</p>
+                </a>
+            </div>
+            <div class="col-md-5 col-sm-6 halim-search-form hidden-xs">
+                <div class="header-nav">
+                    <div class="col-xs-12">
+                        <form id="search-form-pc" name="halimForm" role="search" action="" method="GET">
+                            <div class="form-group">
+                                <div class="input-group col-xs-12">
+                                    <input id="search" type="text" name="s" class="form-control"
+                                        placeholder="Tìm kiếm..." autocomplete="off" required>
+                                    <i class="animate-spin hl-spin4 hidden"></i>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-2 end-xs col-md-6 menu-wrapper">
-                            <a href="#" class="menu-mobile--open" style="display: none">
-                                <i class="fas fa-bars"></i>
-                            </a>
-                            <ul class="menu is-flex end-xs middle-xs">
-                                <li class="menu__item is-logo" style="display: none"></li>
-                                <li class="menu__item">
-                                    <a href="#" class="menu__link bold d-inline-block">Guide</a>
-                                </li>
-                                <li class="menu__item">
-                                    <a href="#" class="menu__link is-become-host d-inline-block">Host</a>
-                                </li>
-                                <li class="menu__item">
-                                    <a href="#" class="menu__link bold">Đăng ký</a>
-                                </li>
-                                <li class="menu__item">
-                                    <a href="#" class="menu__link bold">Đăng nhập</a>
-                                </li>
-                                <li class="menu__item is-relative">
-                                    <div>
-                                        <span class="menu__link btn--dropdown semi-bold is-flex middle-xs is-relative pointer">
-                                            <img src="{{ url('images/vi.svg') }}" width="24" height="24" alt="">
-                                            <span class="ml--6">VND</span>
-                                        </span>
-                                    </div>
-                                    <div class="popover">
-                                        <div class="row is-relative currency-box">
-                                            <div class="col-md-6 col-xs-12">
-                                                <a href="#" class="is-flex middle-xs is-relative pointer is-checked">
-                                                    <img src="{{ url('images/vi.svg') }}" width="16" height="16" alt="">
-                                                    <span class="px--12">Tiếng Việt</span>
-                                                </a>
-                                                <a href="#" class="is-flex middle-xs is-relative pointer">
-                                                    <img src="{{ url('images/en.svg') }}" width="16" height="16" alt="">
-                                                    <span class="px--12">English</span>
-                                                </a>
-                                                <a href="#" class="is-flex middle-xs is-relative pointer">
-                                                    <img src="{{ url('images/ko.svg') }}" width="16" height="16" alt="">
-                                                    <span class="px--12">Korea</span>
-                                                </a>
-                                            </div>
-                                            <div class="col-md-6 col-xs-12">
-                                                <a href="#" class="is-flex middle-xs is-relative pointer">
-                                                    <b>VND</b>
-                                                    <span class="px--12">Việt Nam Đồng</span>
-                                                </a>
-                                                <a href="#" class="is-flex middle-xs is-relative pointer">
-                                                    <b>USD</b>
-                                                    <span class="px--12">United States Dollar</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="menu-mobile--close" style="display: none">
-                                    <img src="{{ url('images/close.svg') }}" width="24" height="24" alt="">
-                                </li>
-                            </ul>
-                        </div>
+                        </form>
+                        <ul class="ui-autocomplete ajax-results hidden"></ul>
                     </div>
+                </div>
+            </div>
+            <div class="col-md-4 hidden-xs">
+                <div id="get-bookmark" class="box-shadow"><i class="hl-bookmark"></i><span>
+                        Bookmarks</span><span class="count">0</span></div>
+                <div id="bookmark-list" class="hidden bookmark-list-on-pc">
+                    <ul style="margin: 0;"></ul>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<div id="app">
-    <div id="main" class="wrapper clearfix">
-        <header-component inline-template>                            
-        </header-component>
+<div class="navbar-container">
+    <div class="container">
+        <nav class="navbar halim-navbar main-navigation" role="navigation" data-dropdown-hover="1">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse"
+                    data-target="#halim" aria-expanded="false">
+                    <span class="sr-only">Menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <button type="button" class="navbar-toggle collapsed pull-right expand-search-form"
+                    data-toggle="collapse" data-target="#search-form" aria-expanded="false">
+                    <span class="hl-search" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="navbar-toggle collapsed pull-right get-bookmark-on-mobile">
+                    Bookmarks<i class="hl-bookmark" aria-hidden="true"></i>
+                    <span class="count">0</span>
+                </button>
+                <button type="button" class="navbar-toggle collapsed pull-right get-locphim-on-mobile">
+                    <a href="javascript:;" id="expand-ajax-filter" style="color: #ffed4d;">Lọc <i
+                            class="fas fa-filter"></i></a>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="halim">
+                <div class="menu-menu_1-container">
+                    <ul id="menu-menu_1" class="nav navbar-nav navbar-left">
+                        <li class="current-menu-item active"><a title="Trang Chủ" href="index.php">Trang Chủ</a>
+                        </li>
+                        <li class="mega"><a title="Phim Mới" href="danhmuc.php">Phim Mới</a></li>
+                        <li class="mega dropdown">
+                            <a title="Năm" href="#" data-toggle="dropdown" class="dropdown-toggle"
+                                aria-haspopup="true">Năm <span class="caret"></span></a>
+                            <ul role="menu" class=" dropdown-menu">
+                                <li><a title="Phim 2020" href="danhmuc.php">Phim 2020</a></li>
+                                <li><a title="Năm 2019" href="danhmuc.php">Năm 2019</a></li>
+                                <li><a title="Năm 2018" href="danhmuc.php">Năm 2018</a></li>
+                            </ul>
+                        </li>
+                        <li class="mega dropdown">
+                            <a title="Thể Loại" href="#" data-toggle="dropdown" class="dropdown-toggle"
+                                aria-haspopup="true">Thể Loại <span class="caret"></span></a>
+                            <ul role="menu" class=" dropdown-menu">
+                                <li><a title="Tâm Lý" href="danhmuc.php">Tâm Lý</a></li>
+                                <li><a title="Hành động" href="">Hành động</a></li>
+                                <li><a title="Viễn Tưởng" href="">Viễn Tưởng</a></li>
+                                <li><a title="Hoạt Hình" href="danhmuc.php">Hoạt Hình</a></li>
+                                <li><a title="Kinh Dị" href="danhmuc.php">Kinh Dị</a></li>
+                                <li><a title="Hài Hước" href="danhmuc.php">Hài Hước</a></li>
+                                <li><a title="Hình Sự" href="danhmuc.php">Hình Sự</a></li>
+                                <li><a title="Võ Thuật" href="danhmuc.php">Võ Thuật</a></li>
+                                <li><a title="Cổ Trang" href="danhmuc.php">Cổ Trang</a></li>
+                                <li><a title="Phim Ma" href="danhmuc.php">Phim Ma</a></li>
+                                <li><a title="Tình Cảm" href="danhmuc.php">Tình Cảm</a></li>
+                                <li><a title="Thể Thao - Âm Nhạc" href="danhmuc.php">Thể Thao &#8211; Âm Nhạc</a>
+                                </li>
+                                <li><a title="Thần Thoại" href="danhmuc.php">Thần Thoại</a></li>
+                                <li><a title="Tài Liệu" href="danhmuc.php">Tài Liệu</a></li>
+                                <li><a title="Phiêu Lưu" href="danhmuc.php">Phiêu Lưu</a></li>
+                                <li><a title="Gia Đình" href="danhmuc.php">Gia Đình</a></li>
+                                <li><a title="Chiến Tranh" href="danhmuc.php">Chiến Tranh</a></li>
+                            </ul>
+                        </li>
+                        <li class="mega dropdown">
+                            <a title="Quốc Gia" href="#" data-toggle="dropdown" class="dropdown-toggle"
+                                aria-haspopup="true">Quốc Gia <span class="caret"></span></a>
+                            <ul role="menu" class=" dropdown-menu">
+                                <li><a title="Việt nam" href="danhmuc.php">Việt nam</a></li>
+                                <li><a title="Ấn Độ" href="danhmuc.php">Ấn Độ</a></li>
+                                <li><a title="Mỹ" href="danhmuc.php">Mỹ</a></li>
+                                <li><a title="Hồng Kông" href="danhmuc.php">Hồng Kông</a></li>
+                                <li><a title="Nhật Bản" href="danhmuc.php">Nhật Bản</a></li>
+                                <li><a title="Trung Quốc" href="danhmuc.php">Trung Quốc</a></li>
+                                <li><a title="Hàn Quốc" href="danhmuc.php">Hàn Quốc</a></li>
+                                <li><a title="Đài Loan" href="danhmuc.php">Đài Loan</a></li>
+                                <li><a title="Thái Lan" href="danhmuc.php">Thái Lan</a></li>
+                                <li><a title="Philippin" href="danhmuc.php">Philippin</a></li>
+                            </ul>
+                        </li>
+                        <li><a title="Phim Lẻ" href="danhmuc.php">Phim Lẻ</a></li>
+                        <li><a title="Phim Bộ" href="danhmuc.php">Phim Bộ</a></li>
+                        <li><a title="Phim Chiếu Rạp" href="danhmuc.php">Phim Chiếu Rạp</a></li>
+                    </ul>
+                </div>
+                <ul class="nav navbar-nav navbar-left" style="background:#000;">
+                    <li><a href="#" onclick="locphim()" style="color: #ffed4d;">Lọc Phim</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="collapse navbar-collapse" id="search-form">
+            <div id="mobile-search-form" class="halim-search-form"></div>
+        </div>
+        <div class="collapse navbar-collapse" id="user-info">
+            <div id="mobile-user-login"></div>
+        </div>
     </div>
-    <!-- main -->
 </div>

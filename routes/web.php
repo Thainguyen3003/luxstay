@@ -22,4 +22,9 @@ Route::get('/phim', 'MovieController@movie')->name('movie');
 Route::get('/xem-phim', 'WatchController@watch')->name('watch');
 Route::get('/tap-phim', 'EpisodeController@episode')->name('episode');
 
+/* ---------------------------------------------------------------------------- */
+/* Admin */
+Route::get('/admin', 'AdminController@home')->name('home');
+Route::get('/admin/the-loai', 'AdminController@createCategory')->name('admin.pages.category.createCategory');
+
 /* Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home'); */

@@ -25,6 +25,9 @@ Route::get('/tap-phim', 'EpisodeController@episode')->name('episode');
 /* ---------------------------------------------------------------------------- */
 /* Admin */
 Route::get('/admin', 'AdminController@home')->name('home');
-Route::get('/admin/the-loai', 'AdminController@createCategory')->name('admin.pages.category.createCategory');
+Route::get('/admin/danh-muc', 'AdminCategoryController@formCreateCategory')->name('admin.pages.category.createCategory');
+Route::post('/admin/tao-danh-muc', 'AdminCategoryController@createCategory')->name('createCategory.post');
+Route::get('/admin/danh-sach-danh-muc', 'AdminCategoryController@listCategory')->name('admin.pages.category.listCategory');
+Route::get('/admin/chinh-sua-danh-muc', 'AdminCategoryController@editCategory')->name('admin.pages.category.editCategory');
 
 /* Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home'); */

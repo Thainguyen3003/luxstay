@@ -21,7 +21,7 @@ class CreateTableEpisodes extends Migration
             $table->integer('episode');
             $table->text('description');
             $table->string('link');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

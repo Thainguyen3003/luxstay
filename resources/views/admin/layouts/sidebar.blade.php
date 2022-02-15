@@ -27,7 +27,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active treeview menu-open">
+            <li class="treeview menu-open">
                 <a href="#">
                     <i class="fa fa-map"></i> <span>Quốc gia</span>
                     <span class="pull-right-container">
@@ -35,12 +35,25 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                    <li><a href="index.html"><i class="fa fa-circle-o"></i> Thêm quốc gia</a></li>
                     <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a>
                     </li>
                 </ul>
             </li>
-            <li class="active treeview menu-open">
+            <li class="treeview menu-open">
+                <a href="#">
+                    <i class="fa fa-book"></i> <span>Danh mục</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('admin.pages.category.createCategory') }}"><i class="fa fa-circle-o"></i> Thêm danh mục</a></li>
+                    <li class="active"><a href="{{ route('admin.pages.category.listCategory') }}"><i class="fa fa-circle-o"></i> Danh sách danh mục</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview menu-open">
                 <a href="#">
                     <i class="fa fa-book"></i> <span>Thể loại</span>
                     <span class="pull-right-container">
@@ -48,12 +61,12 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('admin.pages.category.createCategory') }}"><i class="fa fa-circle-o"></i> Tạo thể loại</a></li>
+                    <li><a href="{{ route('admin.pages.category.createCategory') }}"><i class="fa fa-circle-o"></i> Thêm thể loại</a></li>
                     <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a>
                     </li>
                 </ul>
             </li>
-            <li class="active treeview menu-open">
+            <li class="treeview menu-open">
                 <a href="#">
                     <i class="fa fa-tv"></i> <span>Phim</span>
                     <span class="pull-right-container">
@@ -66,7 +79,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="active treeview menu-open">
+            <li class="treeview menu-open">
                 <a href="#">
                     <i class="fa fa-film"></i> <span>Tập phim</span>
                     <span class="pull-right-container">
@@ -79,7 +92,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="active treeview menu-open">
+            <li class="treeview menu-open">
                 <a href="#">
                     <i class="fa fa-user"></i> <span>Tài khoản</span>
                     <span class="pull-right-container">

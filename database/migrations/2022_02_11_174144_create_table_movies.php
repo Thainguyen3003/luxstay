@@ -23,7 +23,7 @@ class CreateTableMovies extends Migration
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
             $table->bigInteger('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

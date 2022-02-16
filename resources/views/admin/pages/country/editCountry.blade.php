@@ -11,7 +11,7 @@
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Forms</a></li>
-        <li class="active">Quốc gia</li>
+        <li class="active">Sửa quốc gia</li>
       </ol>
     </section>
 
@@ -23,37 +23,46 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Tạo quốc gia</h3>
+              <h3 class="box-title">Sửa quốc gia</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ route('createCountry.post') }}" method="POST">
+            <form role="form" action="{{ route('editCountry.post') }}" method="POST">
               @csrf
               <div class="box-body">
                 <div class="form-group">
+                  <label for="inputName">ID quốc gia</label>
+                  <input name="idCountry" type="text" class="form-control" id="inputName" value="{{ $country->id }}" readonly>
+                </div>
+                <div class="form-group">
                   <label for="inputName">Tên quốc gia</label>
-                  <input name="nameCountry" type="text" class="form-control" id="inputName">
+                  <input name="nameCountry" type="text" class="form-control" id="inputName" value="{{ $country->name }}">
                 </div>
                 <div class="form-group">
                   <label for="inputDesc">Mô tả quốc gia</label>
-                  <textarea name="descCountry" type="text" class="form-control" id="inputDesc"></textarea>
+                  <textarea name="descCountry" type="text" class="form-control" id="inputDesc">{{ $country->description }}</textarea>
                 </div>
                 <div class="form-group">
                   <label for="inputSlug">slug</label>
-                  <input name="descSlug" type="text" class="form-control" id="inputSlug">
+                  <input name="descSlug" type="text" class="form-control" id="inputSlug" value="{{ $country->slug }}">
                 </div>
                 <div class="form-group">
                   <label>Trạng thái</label>
                   <select name="statusCountry" class="form-control">
-                    <option value="1">Bật</option>
-                    <option value="0">Tắt</option>
+                    @if ($country->status == 1)
+                      <option value="1" selected>Bật</option>
+                      <option value="0">Tắt</option>
+                    @else
+                      <option value="1">Bật</option>
+                      <option value="0" selected>Tắt</option>
+                    @endif
                   </select>
                 </div>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Tạo</button>
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
               </div>
             </form>
           </div>

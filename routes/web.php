@@ -42,4 +42,11 @@ Route::get('/admin/chinh-sua-the-loai/{slugGenre}', 'AdminGenreController@formEd
 Route::post('/admin/chinh-sua-the-loai', 'AdminGenreController@editGenre')->name('editGenre.post');
 Route::get('/admin/xoa-the-loai/{slugGenre}', 'AdminGenreController@deleteGenre')->name('deleteGenre');
 
+// Admin Country
+Route::get('/admin/quoc-gia', 'AdminCountryController@formCreateCountry')->name('admin.pages.country.createCountry');
+Route::post('/admin/tao-quoc-gia', 'AdminCountryController@createCountry')->name('createCountry.post');
+Route::get('/admin/danh-sach-quoc-gia', 'AdminCountryController@listCountry')->name('admin.pages.country.listCountries');
+Route::get('/admin/chinh-sua-quoc-gia/{slugCountry}', 'AdminCountryController@formEditCountry')->name('admin.pages.country.editCountry');
+Route::post('/admin/chinh-sua-quoc-gia', 'AdminCountryController@editCountry')->name('editCountry.post');
+Route::get('/admin/xoa-quoc-gia/{slugCountry}', 'AdminCountryController@deleteCountry')->name('deleteCountry');
 /* Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home'); */

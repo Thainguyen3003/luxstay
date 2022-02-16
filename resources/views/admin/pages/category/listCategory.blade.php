@@ -45,7 +45,7 @@
                                         <th>Name</th>
                                         <th>Status</th>
                                         <th>Description</th>
-                                        <th>Option</th>
+                                        <th>Manage</th>
                                     </tr>
                                     @foreach ($listCategories as $category)
                                         <tr>
@@ -59,8 +59,8 @@
                                             
                                             <td>{{ $category->description }}</td>
                                             <td style="font-size: 20px">
-                                                <a class="fa fa-edit" href="#"></a> 
-                                                <a class="fa fa-trash" href="#"></a>
+                                                <a class="fa fa-edit" href="{{ route('admin.pages.category.editCategory', $category->slug) }}"></a> 
+                                                <a href="{{ route('deleteCategory', $category->slug) }}" onclick="return confirm('Bạn muốn xóa ?')" class="fa fa-trash"></button>
                                             </td>
                                         </tr>
                                     @endforeach

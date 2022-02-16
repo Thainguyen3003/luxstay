@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputDesc">Mô tả danh mục</label>
-                  <input name="descCategory" type="text" class="form-control" id="inputDesc">
+                  <textarea name="descCategory" type="text" class="form-control" id="inputDesc"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="inputSlug">slug</label>

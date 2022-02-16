@@ -25,4 +25,25 @@ class AdminCategoryController extends Controller
         $listCategories = Category::all();
         return view('admin.pages.category.listCategory', compact('listCategories'));
     }
+
+    public function formEditCategory($slugCategory) {
+        $category = Category::where('slug', $slugCategory)->first();
+        return view('admin.pages.category.editCategory', compact('category'));
+    }
+
+    public function editCategory(Request $request) {
+        $category = Category::find($request->idCategory);
+        $category->name = $request->nameCategory;
+        $category->description = $request->descCategory;
+        $category->status = $request->statusCategory;
+        $category->save();
+        return redirect('admin/danh-sach-danh-muc');
+    }
+
+    public function deleteCategory($slugCategory) {
+        $category = Category::where('slug', $slugCategory)->first();
+        $category->delete();
+        return redirect()->back();
+        
+    }
 }

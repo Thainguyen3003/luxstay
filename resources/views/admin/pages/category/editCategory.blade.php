@@ -11,7 +11,7 @@
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Forms</a></li>
-        <li class="active">Tạo danh mục</li>
+        <li class="active">Sửa danh mục</li>
       </ol>
     </section>
 
@@ -23,58 +23,46 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Tạo danh mục</h3>
+              <h3 class="box-title">Sửa danh mục</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ route('createCategory.post') }}" method="POST">
+            <form role="form" action="{{ route('editCategory.post') }}" method="POST">
               @csrf
               <div class="box-body">
                 <div class="form-group">
+                  <label for="inputName">ID danh mục</label>
+                  <input name="idCategory" type="text" class="form-control" id="inputName" value="{{ $category->id }}" readonly>
+                </div>
+                <div class="form-group">
                   <label for="inputName">Tên danh mục</label>
-                  <input name="nameCategory" type="text" class="form-control" id="inputName">
+                  <input name="nameCategory" type="text" class="form-control" id="inputName" value="{{ $category->name }}">
                 </div>
                 <div class="form-group">
                   <label for="inputDesc">Mô tả danh mục</label>
-                  <input name="descCategory" type="text" class="form-control" id="inputDesc">
+                  <textarea name="descCategory" type="text" class="form-control" id="inputDesc">{{ $category->description }}</textarea>
                 </div>
                 <div class="form-group">
                   <label for="inputSlug">slug</label>
-                  <input name="descSlug" type="text" class="form-control" id="inputSlug">
+                  <input name="descSlug" type="text" class="form-control" id="inputSlug" value="{{ $category->slug }}">
                 </div>
-                {{-- <div class="form-group">
-                  <label for="exampleInputFile">Ảnh bìa</label>
-                  <input type="file" id="exampleInputFile">
-                  <p class="help-block">Hãy chọn ảnh bìa cho truyện</p>
-                </div> --}}
-                {{-- <div class="form-group">
-                  <label>Kiểu phim</label>
-                  <select class="form-control">
-                    <option>Phim lẻ</option>
-                    <option>Phim bộ</option>
-                    <option>Phim hoạt hình</option>
-                    <option>Phim chiếu rạp</option>
-                  </select>
-                </div> --}}
-                {{-- <div class="form-group">
-                  <label>Quốc gia</label>
-                  <select class="form-control">
-                    <option>Bật</option>
-                    <option>Tắt</option>
-                  </select>
-                </div> --}}
                 <div class="form-group">
                   <label>Trạng thái</label>
                   <select name="statusCategory" class="form-control">
-                    <option value="1">Bật</option>
-                    <option value="0">Tắt</option>
+                    @if ($category->status == 1)
+                      <option value="1" selected>Bật</option>
+                      <option value="0">Tắt</option>
+                    @else
+                      <option value="1">Bật</option>
+                      <option value="0" selected>Tắt</option>
+                    @endif
                   </select>
                 </div>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Tạo</button>
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
               </div>
             </form>
           </div>

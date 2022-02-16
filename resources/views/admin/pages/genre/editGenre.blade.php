@@ -11,7 +11,7 @@
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Forms</a></li>
-        <li class="active">Tạo thể loại</li>
+        <li class="active">Sửa thể loại</li>
       </ol>
     </section>
 
@@ -23,37 +23,46 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Tạo thể loại</h3>
+              <h3 class="box-title">Sửa thể loại</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ route('createGenre.post') }}" method="POST">
+            <form role="form" action="{{ route('editGenre.post') }}" method="POST">
               @csrf
               <div class="box-body">
                 <div class="form-group">
+                  <label for="inputId">ID thể loại</label>
+                  <input name="idGenre" type="text" class="form-control" id="inputId" value="{{ $genre->id }}" readonly>
+                </div>
+                <div class="form-group">
                   <label for="inputName">Tên thể loại</label>
-                  <input name="nameGenre" type="text" class="form-control" id="inputName">
+                  <input name="nameGenre" type="text" class="form-control" id="inputName" value="{{ $genre->name }}">
                 </div>
                 <div class="form-group">
                   <label for="inputDesc">Mô tả thể loại</label>
-                  <textarea name="descGenre" type="text" class="form-control" id="inputDesc"></textarea>
+                  <textarea name="descGenre" type="text" class="form-control" id="inputDesc">{{ $genre->description }}</textarea>
                 </div>
                 <div class="form-group">
                   <label for="inputSlug">slug</label>
-                  <input name="slugGenre" type="text" class="form-control" id="inputSlug">
+                  <input name="descSlug" type="text" class="form-control" id="inputSlug" value="{{ $genre->slug }}">
                 </div>
                 <div class="form-group">
                   <label>Trạng thái</label>
                   <select name="statusGenre" class="form-control">
-                    <option value="1">Bật</option>
-                    <option value="0">Tắt</option>
+                    @if ($genre->status == 1)
+                      <option value="1" selected>Bật</option>
+                      <option value="0">Tắt</option>
+                    @else
+                      <option value="1">Bật</option>
+                      <option value="0" selected>Tắt</option>
+                    @endif
                   </select>
                 </div>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Tạo</button>
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
               </div>
             </form>
           </div>

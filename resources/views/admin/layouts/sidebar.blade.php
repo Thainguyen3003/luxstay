@@ -61,7 +61,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('admin.pages.category.createCategory') }}"><i class="fa fa-circle-o"></i> Thêm thể loại</a></li>
+                    <li><a href="{{ route('admin.pages.genre.createGenre') }}"><i class="fa fa-circle-o"></i> Thêm thể loại</a></li>
                     <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a>
                     </li>
                 </ul>

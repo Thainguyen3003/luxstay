@@ -34,4 +34,12 @@ Route::get('/admin/chinh-sua-danh-muc/{slugCategory}', 'AdminCategoryController@
 Route::post('/admin/chinh-sua-danh-muc', 'AdminCategoryController@editCategory')->name('editCategory.post');
 Route::get('/admin/xoa-danh-muc/{slugCategory}', 'AdminCategoryController@deleteCategory')->name('deleteCategory');
 
+// Admin Genre
+Route::get('/admin/the-loai', 'AdminGenreController@formCreateGenre')->name('admin.pages.genre.createGenre');
+Route::post('/admin/tao-the-loai', 'AdminGenreController@createGenre')->name('createGenre.post');
+Route::get('/admin/danh-sach-the-loai', 'AdminGenreController@listGenre')->name('admin.pages.genre.listGenre');
+Route::get('/admin/chinh-sua-the-loai/{slugGenre}', 'AdminGenreController@formEditGenre')->name('admin.pages.genre.editGenre');
+Route::post('/admin/chinh-sua-the-loai', 'AdminGenreController@editGenre')->name('editGenre.post');
+Route::get('/admin/xoa-the-loai/{slugGenre}', 'AdminGenreController@deleteGenre')->name('deleteGenre');
+
 /* Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home'); */

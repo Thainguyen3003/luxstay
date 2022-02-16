@@ -42,27 +42,6 @@
                   <label for="inputSlug">slug</label>
                   <input name="descSlug" type="text" class="form-control" id="inputSlug">
                 </div>
-                {{-- <div class="form-group">
-                  <label for="exampleInputFile">Ảnh bìa</label>
-                  <input type="file" id="exampleInputFile">
-                  <p class="help-block">Hãy chọn ảnh bìa cho truyện</p>
-                </div> --}}
-                {{-- <div class="form-group">
-                  <label>Kiểu phim</label>
-                  <select class="form-control">
-                    <option>Phim lẻ</option>
-                    <option>Phim bộ</option>
-                    <option>Phim hoạt hình</option>
-                    <option>Phim chiếu rạp</option>
-                  </select>
-                </div> --}}
-                {{-- <div class="form-group">
-                  <label>Quốc gia</label>
-                  <select class="form-control">
-                    <option>Bật</option>
-                    <option>Tắt</option>
-                  </select>
-                </div> --}}
                 <div class="form-group">
                   <label>Trạng thái</label>
                   <select name="statusCategory" class="form-control">

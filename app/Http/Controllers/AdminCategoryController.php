@@ -18,7 +18,8 @@ class AdminCategoryController extends Controller
         $category->status = $request->statusCategory;
         $category->slug = $request->descSlug;
         $category->save();
-        
+
+        return redirect('admin/danh-sach-danh-muc');
     }
 
     public function listCategory() {

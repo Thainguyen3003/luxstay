@@ -49,4 +49,13 @@ Route::get('/admin/danh-sach-quoc-gia', 'AdminCountryController@listCountry')->n
 Route::get('/admin/chinh-sua-quoc-gia/{slugCountry}', 'AdminCountryController@formEditCountry')->name('admin.pages.country.editCountry');
 Route::post('/admin/chinh-sua-quoc-gia', 'AdminCountryController@editCountry')->name('editCountry.post');
 Route::get('/admin/xoa-quoc-gia/{slugCountry}', 'AdminCountryController@deleteCountry')->name('deleteCountry');
+
+// Admin Movie
+Route::get('/admin/phim', 'AdminMovieController@formCreateMovie')->name('admin.pages.movie.createMovie');
+Route::post('/admin/tao-phim', 'AdminMovieController@createMovie')->name('createMovie.post');
+Route::get('/admin/danh-sach-phim', 'AdminMovieController@listMovie')->name('admin.pages.movie.listMovies');
+Route::get('/admin/chinh-sua-phim/{slugMovie}', 'AdminMovieController@formEditMovie')->name('admin.pages.movie.editMovie');
+Route::post('/admin/chinh-sua-phim', 'AdminMovieController@editMovie')->name('editMovie.post');
+Route::get('/admin/xoa-phim/{slugMovie}', 'AdminMovieController@deleteMovie')->name('deleteMovie');
+
 /* Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home'); */

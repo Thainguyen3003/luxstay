@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputSlug">slug</label>
-                  <input name="descSlug" type="text" class="form-control" id="inputSlug" value="{{ $country->slug }}">
+                  <input name="slugCountry" type="text" class="form-control" id="inputSlug" value="{{ $country->slug }}">
                 </div>
                 <div class="form-group">
                   <label>Trạng thái</label>

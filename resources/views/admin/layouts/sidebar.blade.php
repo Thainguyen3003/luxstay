@@ -62,7 +62,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ route('admin.pages.genre.createGenre') }}"><i class="fa fa-circle-o"></i> Thêm thể loại</a></li>
-                    <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a>
+                    <li class="active"><a href="{{ route('admin.pages.genre.listGenre') }}"><i class="fa fa-circle-o"></i> Danh sách thể loại</a>
                     </li>
                 </ul>
             </li>
@@ -74,8 +74,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                    <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a>
+                    <li><a href="{{ route('admin.pages.movie.createMovie') }}"><i class="fa fa-circle-o"></i> Tạo phim</a></li>
+                    <li class="active"><a href="{{ route('admin.pages.movie.listMovies') }}"><i class="fa fa-circle-o"></i> Danh sách phim</a>
                     </li>
                 </ul>
             </li>

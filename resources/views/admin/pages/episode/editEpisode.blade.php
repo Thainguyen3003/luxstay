@@ -31,32 +31,20 @@
               @csrf
               <div class="box-body">
                 <div class="form-group">
-                  <label for="inputName">ID Tập phim</label>
+                  <label for="inputName">ID tập phim</label>
                   <input name="idEpisode" type="text" class="form-control" id="inputName" value="{{ $episode->id }}" readonly>
                 </div>
                 <div class="form-group">
-                  <label for="inputName">Tên Tập phim</label>
-                  <input name="nameEpisode" type="text" class="form-control" id="inputName" value="{{ $Episode->name }}">
+                  <label for="inputName">Tên tập phim</label>
+                  <input name="nameEpisode" type="text" class="form-control" id="inputName" value="{{ $episode->name }}">
                 </div>
                 <div class="form-group">
-                  <label for="inputDesc">Mô tả Tập phim</label>
-                  <textarea name="descEpisode" type="text" class="form-control" id="inputDesc">{{ $Episode->description }}</textarea>
+                  <label for="inputDesc">Mô tả tập phim</label>
+                  <textarea name="descEpisode" type="text" class="form-control" id="inputDesc">{{ $episode->description }}</textarea>
                 </div>
                 <div class="form-group">
                   <label for="inputSlug">slug</label>
-                  <input name="slugEpisode" type="text" class="form-control" id="inputSlug" value="{{ $Episode->slug }}">
-                </div>
-                <div class="form-group">
-                  <label>Trạng thái</label>
-                  <select name="statusEpisode" class="form-control">
-                    @if ($Episode->status == 1)
-                      <option value="1" selected>Bật</option>
-                      <option value="0">Tắt</option>
-                    @else
-                      <option value="1">Bật</option>
-                      <option value="0" selected>Tắt</option>
-                    @endif
-                  </select>
+                  <input name="slugEpisode" type="text" class="form-control" id="inputSlug" value="{{ $episode->slug }}">
                 </div>
               </div>
               <!-- /.box-body -->

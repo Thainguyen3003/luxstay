@@ -87,8 +87,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                    <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a>
+                    <li><a href="{{ route('admin.pages.episode.createEpisode') }}"><i class="fa fa-circle-o"></i> Tạo tập phim</a></li>
+                    <li class="active"><a href="{{ route('admin.pages.movie.listEpisodes') }}"><i class="fa fa-circle-o"></i> Danh sách tập phim</a>
                     </li>
                 </ul>
             </li>

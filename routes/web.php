@@ -58,4 +58,12 @@ Route::get('/admin/chinh-sua-phim/{slugMovie}', 'AdminMovieController@formEditMo
 Route::post('/admin/chinh-sua-phim', 'AdminMovieController@editMovie')->name('editMovie.post');
 Route::get('/admin/xoa-phim/{slugMovie}', 'AdminMovieController@deleteMovie')->name('deleteMovie');
 
+// Admin Episode
+Route::get('/admin/tap-phim', 'AdminEpisodeController@formCreateEpisode')->name('admin.pages.episode.createEpisode');
+Route::post('/admin/tao-tap-phim', 'AdminEpisodeController@createEpisode')->name('createEpisode.post');
+Route::get('/admin/danh-sach-tap-phim', 'AdminEpisodeController@listEpisodes')->name('admin.pages.movie.listEpisodes');
+Route::get('/admin/chinh-sua-tap-phim/{slugEpisode}', 'AdminEpisodeController@formEditEpisode')->name('admin.pages.episode.editEpisode');
+Route::post('/admin/chinh-sua-tap-phim', 'AdminEpisodeController@editEpisode')->name('editEpisode.post');
+Route::get('/admin/xoa-tap-phim/{slugEpisode}', 'AdminEpisodeController@deleteEpisode')->name('deleteEpisode');
+
 /* Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home'); */

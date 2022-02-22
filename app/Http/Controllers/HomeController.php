@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Country;
+use App\Models\Genre;
+use App\Models\Year;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,9 @@ class HomeController extends Controller
      */
     public function home()
     {
-        return view('home');
+        $listGenres = Genre::all();
+        $listCountries = Country::all();
+        $listYears = Year::all();
+        return view('home', compact('listGenres', 'listCountries', 'listYears'));
     }
 }

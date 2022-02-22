@@ -66,4 +66,12 @@ Route::get('/admin/chinh-sua-tap-phim/{slugEpisode}', 'AdminEpisodeController@fo
 Route::post('/admin/chinh-sua-tap-phim', 'AdminEpisodeController@editEpisode')->name('editEpisode.post');
 Route::get('/admin/xoa-tap-phim/{slugEpisode}', 'AdminEpisodeController@deleteEpisode')->name('deleteEpisode');
 
+// Admin Year
+Route::get('/admin/nam', 'AdminYearController@formCreateYear')->name('admin.pages.year.createYear');
+Route::post('/admin/tao-nam', 'AdminYearController@createYear')->name('createYear.post');
+Route::get('/admin/danh-sach-nam', 'AdminYearController@listYears')->name('admin.pages.year.listYears');
+Route::get('/admin/chinh-sua-nam/{slugYear}', 'AdminYearController@formEditYear')->name('admin.pages.year.editYear');
+Route::post('/admin/chinh-sua-nam', 'AdminYearController@editYear')->name('editYear.post');
+Route::get('/admin/xoa-nam/{slugYear}', 'AdminYearController@deleteYear')->name('deleteYear');
+
 /* Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home'); */

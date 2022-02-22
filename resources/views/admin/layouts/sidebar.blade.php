@@ -68,6 +68,19 @@
             </li>
             <li class="treeview menu-open">
                 <a href="#">
+                    <i class="fa fa-book"></i> <span>Năm</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('admin.pages.year.createYear') }}"><i class="fa fa-circle-o"></i> Thêm năm</a></li>
+                    <li><a href="{{ route('admin.pages.year.listYears') }}"><i class="fa fa-circle-o"></i> Danh sách năm</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview menu-open">
+                <a href="#">
                     <i class="fa fa-tv"></i> <span>Phim</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>

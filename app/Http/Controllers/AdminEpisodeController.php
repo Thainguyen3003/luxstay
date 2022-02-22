@@ -41,9 +41,8 @@ class AdminEpisodeController extends Controller
         $episode->name = $request->nameEpisode;
         $episode->description = $request->descEpisode;
         $episode->description = $request->slugEpisode;
-        $episode->status = $request->statusEpisode;
         $episode->save();
-        return redirect('admin/danh-sach-quoc-gia');
+        return redirect('admin/danh-sach-tap-phim');
     }
 
     public function deleteEpisode($slugEpisode) {

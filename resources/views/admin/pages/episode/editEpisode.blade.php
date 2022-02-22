@@ -31,12 +31,12 @@
               @csrf
               <div class="box-body">
                 <div class="form-group">
-                  <label for="inputName">ID tập phim</label>
-                  <input name="idEpisode" type="text" class="form-control" id="inputName" value="{{ $episode->id }}" readonly>
+                  <label for="inputID">ID tập phim</label>
+                  <input name="idEpisode" type="text" class="form-control" id="inputID" value="{{ $episode->id }}" readonly>
                 </div>
                 <div class="form-group">
                   <label for="inputName">Tên tập phim</label>
-                  <input name="nameEpisode" type="text" class="form-control" id="inputName" value="{{ $episode->name }}">
+                  <input name="nameEpisode" type="text" class="form-control" id="slug" value="{{ $episode->name }}" onkeyup="ChangeToSlug()">
                 </div>
                 <div class="form-group">
                   <label for="inputDesc">Mô tả tập phim</label>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputSlug">slug</label>
-                  <input name="slugEpisode" type="text" class="form-control" id="inputSlug" value="{{ $episode->slug }}">
+                  <input name="slugEpisode" type="text" class="form-control" id="convert_slug" value="{{ $episode->slug }}">
                 </div>
               </div>
               <!-- /.box-body -->

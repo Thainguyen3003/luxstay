@@ -36,7 +36,7 @@ class AdminCountryController extends Controller
         $country = Country::find($request->idCountry);
         $country->name = $request->nameCountry;
         $country->description = $request->descCountry;
-        $country->description = $request->slugCountry;
+        $country->slug = $request->slugCountry;
         $country->status = $request->statusCountry;
         $country->save();
         return redirect('admin/danh-sach-quoc-gia');

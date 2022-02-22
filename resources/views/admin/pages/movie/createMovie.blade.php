@@ -33,7 +33,7 @@
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="inputName">Tên phim</label>
-                                    <input name="nameMovie" type="text" class="form-control" id="inputName">
+                                    <input name="nameMovie" type="text" class="form-control" id="slug" onkeyup="ChangeToSlug()">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputDesc">Mô tả phim</label>
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputSlug">slug</label>
-                                    <input name="slugMovie" type="text" class="form-control" id="inputSlug">
+                                    <input name="slugMovie" type="text" class="form-control" id="convert_slug">
                                 </div>
                                 <div class="form-group">
                                     <label>Quốc gia</label>

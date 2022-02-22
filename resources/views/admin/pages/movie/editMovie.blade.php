@@ -31,12 +31,12 @@
               @csrf
               <div class="box-body">
                 <div class="form-group">
-                  <label for="inputName">ID Phim</label>
-                  <input name="idMovie" type="text" class="form-control" id="inputName" value="{{ $movie->id }}" readonly>
+                  <label for="inputID">ID Phim</label>
+                  <input name="idMovie" type="text" class="form-control" id="inputID" value="{{ $movie->id }}" readonly>
                 </div>
                 <div class="form-group">
                   <label for="inputName">Tên Phim</label>
-                  <input name="nameMovie" type="text" class="form-control" id="inputName" value="{{ $movie->name }}">
+                  <input name="nameMovie" type="text" class="form-control" id="slug" onkeyup="ChangeToSlug()" value="{{ $movie->name }}">
                 </div>
                 <div class="form-group">
                   <label for="inputDesc">Mô tả Phim</label>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputSlug">slug</label>
-                  <input name="slugMovie" type="text" class="form-control" id="inputSlug" value="{{ $movie->slug }}">
+                  <input name="slugMovie" type="text" class="form-control" id="convert_slug" value="{{ $movie->slug }}">
                 </div>
                 <div class="form-group">
                     <label>Quốc gia</label>

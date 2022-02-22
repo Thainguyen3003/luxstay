@@ -6,12 +6,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Tập phim
+        Quốc gia
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Forms</a></li>
-        <li class="active">Sửa tập phim</li>
+        <li class="active">Sửa quốc gia</li>
       </ol>
     </section>
 
@@ -23,33 +23,33 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Sửa tập phim</h3>
+              <h3 class="box-title">Sửa quốc gia</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ route('editEpisode.post') }}" method="POST">
+            <form role="form" action="{{ route('editCountry.post') }}" method="POST">
               @csrf
               <div class="box-body">
                 <div class="form-group">
-                  <label for="inputName">ID Tập phim</label>
-                  <input name="idEpisode" type="text" class="form-control" id="inputName" value="{{ $episode->id }}" readonly>
+                  <label for="inputName">ID quốc gia</label>
+                  <input name="idCountry" type="text" class="form-control" id="inputName" value="{{ $country->id }}" readonly>
                 </div>
                 <div class="form-group">
-                  <label for="inputName">Tên Tập phim</label>
-                  <input name="nameEpisode" type="text" class="form-control" id="inputName" value="{{ $Episode->name }}">
+                  <label for="inputName">Tên quốc gia</label>
+                  <input name="nameCountry" type="text" class="form-control" id="slug" value="{{ $country->name }}" onkeyup="ChangeToSlug()">
                 </div>
                 <div class="form-group">
-                  <label for="inputDesc">Mô tả Tập phim</label>
-                  <textarea name="descEpisode" type="text" class="form-control" id="inputDesc">{{ $Episode->description }}</textarea>
+                  <label for="inputDesc">Mô tả quốc gia</label>
+                  <textarea name="descCountry" type="text" class="form-control" id="inputDesc">{{ $country->description }}</textarea>
                 </div>
                 <div class="form-group">
                   <label for="inputSlug">slug</label>
-                  <input name="slugEpisode" type="text" class="form-control" id="inputSlug" value="{{ $Episode->slug }}">
+                  <input name="slugCountry" type="text" class="form-control" id="convert_slug" value="{{ $country->slug }}">
                 </div>
                 <div class="form-group">
                   <label>Trạng thái</label>
-                  <select name="statusEpisode" class="form-control">
-                    @if ($Episode->status == 1)
+                  <select name="statusCountry" class="form-control">
+                    @if ($country->status == 1)
                       <option value="1" selected>Bật</option>
                       <option value="0">Tắt</option>
                     @else

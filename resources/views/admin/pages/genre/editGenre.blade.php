@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputName">Tên thể loại</label>
-                  <input name="nameGenre" type="text" class="form-control" id="inputName" value="{{ $genre->name }}">
+                  <input name="nameGenre" type="text" class="form-control" id="slug" onkeyup="ChangeToSlug()" value="{{ $genre->name }}" >
                 </div>
                 <div class="form-group">
                   <label for="inputDesc">Mô tả thể loại</label>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputSlug">slug</label>
-                  <input name="descSlug" type="text" class="form-control" id="inputSlug" value="{{ $genre->slug }}">
+                  <input name="descSlug" type="text" class="form-control" id="convert_slug" value="{{ $genre->slug }}">
                 </div>
                 <div class="form-group">
                   <label>Trạng thái</label>

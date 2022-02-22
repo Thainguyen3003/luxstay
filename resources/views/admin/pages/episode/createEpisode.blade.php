@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputName">Tên tập phim</label>
-                                    <input name="nameEpisode" type="text" class="form-control" id="inputName">
+                                    <input name="nameEpisode" type="text" class="form-control" id="slug" onkeyup="ChangeToSlug()">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEpisode">Tập phim</label>
@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputSlug">slug</label>
-                                    <input name="slugEpisode" type="text" class="form-control" id="inputSlug">
+                                    <input name="slugEpisode" type="text" class="form-control" id="convert_slug">
                                 </div>
 
                             </div>

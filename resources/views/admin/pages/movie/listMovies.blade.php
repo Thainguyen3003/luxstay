@@ -45,21 +45,21 @@
                                         <th>Name</th>
                                         <th>Image</th>
                                         <th>Status</th>
-                                        <th>Description</th>
+                                        <th>Slug</th>
                                         <th>Manage</th>
                                     </tr>
                                     @foreach ($listMovies as $movie)
                                         <tr>
                                             <td>{{ $movie->id }}</td>
                                             <td>{{ $movie->name }}</td>
-                                            <td><img src="{{ Storage::url($movie->image) }}" alt="{{ $movie->name }}"></td>
+                                            <td><img src="{{ url('movies/'. $movie->image) }}" alt="{{ $movie->name }}" style="width:150px"></td>
                                             @if ( $movie->status == 1 )
                                                 <td><span class="label label-success">Bật</span></td>
                                             @else
                                                 <td><span class="label label-danger">Tắt</span></td>
                                             @endif
                                             
-                                            <td>{{ $movie->description }}</td>
+                                            <td>{{ $movie->slug }}</td>
                                             <td style="font-size: 20px">
                                                 <a class="fa fa-edit" href="{{ route('admin.pages.movie.editMovie', $movie->slug) }}"></a> 
                                                 <a href="{{ route('deleteMovie', $movie->slug) }}" onclick="return confirm('Bạn muốn xóa ?')" class="fa fa-trash"></button>

@@ -33,7 +33,8 @@
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="inputName">Tên phim</label>
-                                    <input name="nameMovie" type="text" class="form-control" id="slug" onkeyup="ChangeToSlug()">
+                                    <input name="nameMovie" type="text" class="form-control" id="slug"
+                                        onkeyup="ChangeToSlug()">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputDesc">Mô tả phim</label>
@@ -65,6 +66,15 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label>Thể loại</label>
+                                    <select name="genre_id[]" class="form-control select2" multiple="multiple"
+                                        data-placeholder="Chọn thể loại" style="width: 100%;">
+                                        @foreach ($genres as $genre)
+                                            <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label>Trạng thái</label>
                                     <select name="statusMovie" class="form-control">
                                         <option value="1">Bật</option>
@@ -87,6 +97,8 @@
             <!-- /.row -->
         </section>
         <!-- /.content -->
+
     </div>
     <!-- /.content-wrapper -->
+
 @endsection

@@ -46,6 +46,7 @@
                     <label for="exampleInputFile">Chọn ảnh bìa</label>
                     <input name="image" type="file" id="exampleInputFile">
                     <p class="help-block">Example block-level help text here.</p>
+                    <img src="{{ url('movies/'. $movie->image) }}" alt="{{ $movie->name }}">
                 </div>
                 <div class="form-group">
                   <label for="inputSlug">slug</label>
@@ -67,6 +68,21 @@
                         @endforeach
                     </select>
                 </div>
+                <div class="form-group">
+                  <label>Thể loại</label>
+                  <div>
+                    @foreach ($movie->genres as $genre)
+                      <button type="button" class="btn btn-success">{{$genre->name}}</button>
+                    @endforeach
+                  </div>
+                  &nbsp;
+                  <select name="genre_id[]" class="form-control select2" multiple="multiple"
+                      data-placeholder="Chọn thể loại" style="width: 100%;">
+                      @foreach ($genres as $genre)
+                          <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                      @endforeach
+                  </select>
+              </div>
                 <div class="form-group">
                   <label>Trạng thái</label>
                   <select name="statusMovie" class="form-control">

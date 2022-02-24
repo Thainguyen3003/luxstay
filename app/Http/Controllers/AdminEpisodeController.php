@@ -8,6 +8,11 @@ use App\Models\Movie;
 
 class AdminEpisodeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function formCreateEpisode() {
         $listMovies = Movie::all();
         return view('admin.pages.episode.createEpisode', compact('listMovies'));

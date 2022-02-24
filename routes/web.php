@@ -24,7 +24,10 @@ Route::get('/tap-phim', 'EpisodeController@episode')->name('episode');
 
 /* ---------------------------------------------------------------------------- */
 /* Admin */
-Route::get('/admin', 'AdminController@home')->name('home');
+Route::get('/admin/trang-chu', 'AdminController@home')->name('admin.pages.home');
+
+// Auth admin
+Route::get('/admin/login', 'AdminLoginController@adminLogin')->name('admin.auth.login');
 
 // Admin category
 Route::get('/admin/danh-muc', 'AdminCategoryController@formCreateCategory')->name('admin.pages.category.createCategory');

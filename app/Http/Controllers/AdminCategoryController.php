@@ -7,6 +7,12 @@ use App\Models\Category;
 
 class AdminCategoryController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function formCreateCategory() {
         return view('admin.pages.category.createCategory');
     }

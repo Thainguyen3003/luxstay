@@ -7,6 +7,11 @@ use App\Models\Genre;
 
 class AdminGenreController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function formCreateGenre() {
         return view('admin.pages.genre.createGenre');
     }

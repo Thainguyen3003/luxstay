@@ -7,6 +7,11 @@ use App\Models\Year;
 
 class AdminYearController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function formCreateYear() {
         return view('admin.pages.year.createYear');
     }

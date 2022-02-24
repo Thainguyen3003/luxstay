@@ -11,6 +11,11 @@ use App\Models\MovieGenre;
 
 class AdminMovieController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function formCreateMovie() {
         $countries = Country::all();
         $categories = Category::all();

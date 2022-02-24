@@ -7,6 +7,11 @@ use App\Models\Country;
 
 class AdminCountryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function formCreateCountry() {
         return view('admin.pages.country.createCountry');
     }

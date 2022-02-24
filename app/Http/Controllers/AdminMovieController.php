@@ -88,13 +88,13 @@ class AdminMovieController extends Controller
             if($request->genre_id) {
 
                 $listGenre = $request->genre_id;
-                $movieGenres = MovieGenre::where('movie_id', $request->idMovie)->get();
-                
-                foreach ($listGenre as $genre) {
-                    
-                    
+                $movieGenres = MovieGenre::where('movie_id', $request->idMovie)->delete();
+                foreach ($listGenre as $key => $genre) {
+                    $movieGenre = new MovieGenre(); 
+                    $movieGenre->movie_id = $request->idMovie;
+                    $movieGenre->genre_id = $genre;
+                    $movieGenre->save();
                 }
-                
             }
 
             $movie->name = $request->nameMovie;

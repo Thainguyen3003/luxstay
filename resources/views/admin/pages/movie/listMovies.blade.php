@@ -61,8 +61,9 @@
                                             
                                             <td>{{ $movie->slug }}</td>
                                             <td style="font-size: 20px">
+                                                <a href="#" class="fa fa-eye"></a>
                                                 <a class="fa fa-edit" href="{{ route('admin.pages.movie.editMovie', $movie->slug) }}"></a> 
-                                                <a href="{{ route('deleteMovie', $movie->slug) }}" onclick="return confirm('Bạn muốn xóa ?')" class="fa fa-trash"></button>
+                                                <a href="{{ route('deleteMovie', $movie->slug) }}" onclick="return confirm('Bạn muốn xóa ?')" class="fa fa-trash"></a>
                                             </td>
                                         </tr>
                                     @endforeach

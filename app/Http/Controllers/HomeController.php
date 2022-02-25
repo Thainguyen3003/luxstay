@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Country;
 use App\Models\Genre;
 use App\Models\Year;
+use App\Models\Movie;
 
 class HomeController extends Controller
 {
@@ -29,6 +30,19 @@ class HomeController extends Controller
         $listGenres = Genre::all();
         $listCountries = Country::all();
         $listYears = Year::all();
-        return view('home', compact('listGenres', 'listCountries', 'listYears'));
+        $listMovieOdds = Movie::where('category_id', 9)->orderBy('updated_at', 'DESC')->take(8)->get();
+        $listMovieNews = Movie::where('category_id', 8)->orderBy('updated_at', 'DESC')->take(8)->get();
+        $listMovieSeries = Movie::where('category_id', 10)->orderBy('updated_at', 'DESC')->take(8)->get();
+        $listMovieTheaters = Movie::where('category_id', 11)->orderBy('updated_at', 'DESC')->take(12)->get();
+        
+        return view('home', compact(
+            'listGenres',
+            'listCountries',
+            'listYears',
+            'listMovieOdds',
+            'listMovieNews',
+            'listMovieSeries',
+            'listMovieTheaters'
+        ));
     }
 }
